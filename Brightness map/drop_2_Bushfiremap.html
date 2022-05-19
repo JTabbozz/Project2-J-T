@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Project 2 - Bush Fire Map</title>
+  
+  <!-- Leaflet table -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.1/css/dataTables.bootstrap5.min.css">
+  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" language="javascript" 
+  src="https://cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.11.1/js/dataTables.bootstrap5.min.js"></script>
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
+
+  <!-- Our CSS -->
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" style="background-color: rgb(255, 166, 0);" href="../1_index.html"> Go to Home Page</a>
+      </div>
+
+      
+  </nav>
+  <!-- The div that holds our map -->
+  <div id="mapid"></div>
+
+<!-- The div that holds our data table -->
+
+<style>
+  .jumbotron1 {
+      text-align: center;
+  }
+</style>
+
+<style>
+  .jumbotron2 {
+      text-align: justify;
+  }
+</style>
+
+<div class="container">
+  <div class="jumbotron1">
+      <h1>Bushfire data record in database</h1>
+  </div>
+<p>
+  <div class="jumbotron">
+    <h2>Area at prone of bushfires are represented in orange some of them had being impacted by fires during 2019. <br>The user can navigate through the map and gather information of the bushfire as pinned on the map in red dot.</h2>
+</div>
+</p>
+</div>
+
+ <div id="id01"></div>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+<script>
+var xmlhttp = new XMLHttpRequest();
+var url = "http://127.0.0.1:5000/api/v1.0/firedata";
+
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myArr = JSON.parse(this.responseText);
+        myFunction(myArr);
+    }
+};
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+function myFunction(arr) {
+    var out = "";
+    var i;
+    var out = "<table border=1 width=100%><th>Date</th><th>Fire FRP in MW</th><th>Latitude</th><th>Longitude</th><tr>";
+    for(i = 0; i < arr.length; i++) {
+        out += '<tr><td scope="row">' + arr[i].acq_date  +'</td>'+
+        '<td>'+arr[i].frp+'</td>' +'<td>'+ arr[i].latitude+'</td>' +'<td >'+ arr[i].longitude+'</td></tr>';
+    }
+    out += "</tr></table>";
+    document.getElementById("id01").innerHTML = out;
+}
+</script>
+
+  </body>
+  </html>
+
+
+
+
+  <!-- API key -->
+  <script type="text/javascript" src="static/js/config.js"></script>
+  <!-- Leaflet JavaScript -->
+  <script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+  <!-- D3 JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
+  <!--  JavaScript file-->
+  <script type="text/javascript" src="static/js/logic.js"></script>
+</body>
+</html>

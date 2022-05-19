@@ -1,0 +1,31 @@
+html,
+body,
+#mapid {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Sizes and format for legend  */
+.legend {
+  padding:5px;
+  line-height: 18px;
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+}
+/* Sizes and format for legend color grades */
+.legend i {
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  opacity: 0.81;
+}
+
+/* needed to correct colors not aligned in 1 column in legend  */
+.info.legend.leaflet-control br {
+  clear: both;
+}
+

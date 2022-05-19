@@ -1,0 +1,34 @@
+<head>
+    <script src="https://cdn.plot.ly/plotly-1.8.0.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script type="text/javascript" src="Rainfallplot.js"></script>
+    <script type="text/javascript" src="Historyplot.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-require@1"></script>
+  </head>
+  <body>
+    <h1>Historical fire Graph</h1>
+
+    <div id="controls">
+      <p>Select your District and Year then watch the plot change.</p>
+      <ul>
+        <li>
+          <span class="District">
+            District:
+            <select class="District" name="District"></select>
+          </span>
+          <br />
+        </li>
+
+        <li>
+          <span class="Year">
+            Year:
+            <select class="Year" name="Year"></select>
+          </span>
+        </li>
+      </ul>
+    <h2>Fire Type and Area Burnt (Ha) by Year and District</h2>
+    <svg id="Firehist"></svg>
+    <div id="graph"></div>
+  </div>
+    
+  </body>

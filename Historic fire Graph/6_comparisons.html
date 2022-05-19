@@ -1,0 +1,85 @@
+<!-- COMPARISONS -->
+<!-- Initial declarations and setup language -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <!-- Link to Bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- CSS Stylesheet declaration. Link to file for Cascading Style Sheet-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <!-- Tag title for internet browser tab -->
+    <title>Temperature and rainfall</title>
+</head>
+<body>
+       <!-- Bootstrap JavaScript -->
+        <!-- como en 06 lorem ipsum -->
+        <!-- needed scripts to make dropdown work -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" 
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+            crossorigin="anonymous"></script>
+            <script src="https://cdn.plot.ly/plotly-1.8.0.min.js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script type="text/javascript" src="Rainfallplot.js"></script>
+    
+    <!-- 1st Row with buttons and dropdown -->
+    <div class="topbar">
+        <!-- decided to fix at top to have navigation when scrolling -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+   <!-- Exactly like in bootstrap components lesson. Click button goes back to landing page-->
+            <a class="navbar-brand" style="background-color:rgb(255, 166, 0);" href="1_index.html"> Go to Home Page</a>
+            <!-- Dropdown menu -->
+        <!-- Dropdown menu -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle topbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <!-- dropdown is setup as a unstructured list-->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="Historic%20data/index%20firebush.html"><strong>EVENTS</strong></a>
+                
+                <li class="nav-item">
+                <a class="nav-link" href="Brightness%20map/drop_2_Bushfiremap.html"><strong>MAP</strong></a>    
+                    
+                <!-- rest of navigation items, links to comparison and data-->
+                <li class="nav-item">
+                    <a class="nav-link" href="6_comparisons.html"><strong>R & T COMPARISONS</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="7_data.html"><strong>DATA flow</strong></a>
+                </li>
+            </ul>
+        </div>
+        </nav>
+    </div>
+    <!-- After topbar, begin with bootstrap containers for content and grids -->
+    <div class="container">
+        <div class="row">
+            <!-- After different tests, I like proportion of 8 + 4 = 12 for rows in landing page-->
+            <div class="box">
+                <h3 class="titlepage">Temperature and rainfall profile over the years</h3>
+                <hr>
+                <div class="row justify-content-center">
+                <!-- Written in special red color setup in h4 style.css-->
+                <h4>
+                <strong>Is there any correlation with bushfire number and intensity?  </strong>
+                </h4>
+                </div>
+                <div id="graph">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+  
+</body>
+</html>
