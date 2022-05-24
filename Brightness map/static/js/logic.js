@@ -48,7 +48,7 @@ var overlayMaps = {
   "Bush Fire Prone Areas": Bush_Fire_Prone_Areas,
 };
 
-var geoData = "http://australia-fire-api-dashboard.herokuapp.com/api/v1.0/fires_modis_geojson";
+var geoData = "https://australia-fire-api-dashboard.herokuapp.com/api/v1.0/fires_modis_geojson";
 //var geoData_Flask_API = "http://127.0.0.1:5000/api/v1.0/firedata"
 var geojson;
 
